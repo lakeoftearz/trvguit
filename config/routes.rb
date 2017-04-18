@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/fcomps', to: 'fcomps#index'
   get '/newfc', to: 'fcomps#new'
-  post '/createfc',  to: 'fcomps#create'
+  post '/newfc',  to: 'fcomps#create'
   resources :users
   resources :fcomps
 end

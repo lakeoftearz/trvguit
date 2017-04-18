@@ -4,3 +4,19 @@
 	<p>
 	<%= link_to "Create new flight company",  newfc_path %>
 	</p>
+
+
+<table>
+  
+
+
+<% @fcomps.each do |fcomp| %>
+  <tr>
+    <td><%= fcomp.name %></td>
+    <td><%= fcomp.country %></td>
+    <td><%= fcomp.webpage %></td>
+    <td><%= fcomp.rules %></td>
+    <td><%= fcomp.logo %></td>
+  </tr>
+<% end %>
+</table>

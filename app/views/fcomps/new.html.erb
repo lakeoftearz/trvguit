@@ -1,0 +1,22 @@
+<% provide(:title, 'New Flight COmpany') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@fcomp) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+
+      <%= f.label :webpage %>
+      <%= f.text_field :webpage %>
+
+      <%= f.label :rules %>
+      <%= f.text_area :rules %>
+
+      <%= f.submit "Create company", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

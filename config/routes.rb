@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-
+  get '/fcomps', to: 'fcomps#index'
+  get '/newfc', to: 'fcomps#new'
+  post '/createfc',  to: 'fcomps#create'
   resources :users
+  resources :fcomps
 end

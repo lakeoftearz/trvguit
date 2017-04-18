@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   get '/fcomps', to: 'fcomps#index'
   get '/newfc', to: 'fcomps#new'
   post '/newfc',  to: 'fcomps#create'
-  
+  patch '/newfc', to: 'fcomps#create'
   resources :users
   resources :fcomps
+ # get 'fcomps/:id/edit', to: 'fcomps#edit'
+ # put 'fcomps/:id', to: 'fcomps#update'
+
+  
 end

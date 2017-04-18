@@ -7,6 +7,9 @@ class LogoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
    include CarrierWave::MiniMagick
   process resize_to_limit: [100, 100]
+  version :thumb do
+  process :resize_to_fill => [50, 50]
+end
 
 
   # Choose what kind of storage to use for this uploader:

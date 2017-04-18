@@ -1,0 +1,19 @@
+    <%= form_for(@fcomp, url: newfc_path) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+
+      <%= f.label :webpage %>
+      <%= f.text_field :webpage %>
+
+      <%= f.label :rules %>
+      <%= f.text_area :rules %>
+      
+      <span class="picture">
+    <%= f.file_field :logo, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

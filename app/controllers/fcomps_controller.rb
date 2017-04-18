@@ -13,12 +13,17 @@ class FcompsController < ApplicationController
     @fcomp = Fcomp.new(fcomp_params) 
     if @fcomp.save
       flash[:success] = "Company Created!"
-      redirect_to fcomps_path
+      redirect_to @fcomp
     else
       render 'new'
     end
   end
   
+  def show
+    @fcomp = Fcomp.find(params[:id])
+  end
+
+
   def fcomp_params
       params.require(:fcomp).permit(:name, :country, :webpage,
                                    :logo, :rules)

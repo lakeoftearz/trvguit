@@ -5,14 +5,17 @@
 	<%= link_to "Create new flight company",  newfc_path %>
 	</p>
 
-
-<table>
   
 
 
-<% @fcomps.each do |fcomp| %>
-  <tr>
-    <td><%= image_tag fcomp.logo.url if fcomp.logo? %> <br><%= fcomp.name %></td>
-  </tr>
-<% end %>
-</table>
+
+  <% @fcomps.in_groups_of(5, false) do |f| %>
+  <br>
+  
+  <% f.each do |fcomp| %>
+  
+     <%= image_tag fcomp.logo.url unless fcomp.logo.blank? %> 
+  
+   	<% end %>
+   	
+    <% end %>

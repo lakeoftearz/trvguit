@@ -16,7 +16,7 @@
     <td><%= fcomp.country %></td>
     <td><%= fcomp.webpage %></td>
     <td><%= fcomp.rules %></td>
-    <td><%= fcomp.logo %></td>
+    <td><%= image_tag fcomp.logo.url if fcomp.logo? %></td>
   </tr>
 <% end %>
 </table>

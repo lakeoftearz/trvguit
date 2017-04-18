@@ -15,6 +15,10 @@
 
       <%= f.label :rules %>
       <%= f.text_area :rules %>
+      
+      <span class="picture">
+    <%= f.file_field :logo %>
+  </span>
 
       <%= f.submit "Create company", class: "btn btn-primary" %>
     <% end %>

@@ -12,11 +12,7 @@
 
 <% @fcomps.each do |fcomp| %>
   <tr>
-    <td><%= fcomp.name %></td>
-    <td><%= fcomp.country %></td>
-    <td><%= fcomp.webpage %></td>
-    <td><%= fcomp.rules %></td>
-    <td><%= image_tag fcomp.logo.url if fcomp.logo? %></td>
+    <td><%= image_tag fcomp.logo.url if fcomp.logo? %> <br><%= fcomp.name %></td>
   </tr>
 <% end %>
 </table>

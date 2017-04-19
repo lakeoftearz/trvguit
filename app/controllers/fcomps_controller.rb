@@ -14,6 +14,7 @@ class FcompsController < ApplicationController
     if @fcomp.save
       flash[:success] = "Company Created!"
       redirect_to @fcomp
+      
     else
       render 'new'
     end

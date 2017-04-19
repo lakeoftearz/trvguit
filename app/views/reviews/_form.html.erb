@@ -1,0 +1,23 @@
+    <%= form_for(@review) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      
+            <%= f.label :fullname %>
+      <%= f.text_field :fullname %>
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+      
+      <%= f.label :band %>
+      <%= f.text_area :band %>
+      
+      
+      
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>

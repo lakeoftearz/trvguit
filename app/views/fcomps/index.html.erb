@@ -13,7 +13,9 @@
 	<% if f.name.capitalize.starts_with?(letter) %>
 	<div class="col-md-1 col-xs-6"> 
 	
+     <%= link_to fcomp_path(f.id) do %>  
      <%= image_tag f.logo.url, :size => "50x50" unless f.logo.blank? %> 
+       <% end %>
      <div class="caption"> <%= f.name  %>  <%= link_to "- Edit", edit_fcomp_path(f.id) %>
      	    	
      	</div>

@@ -31,7 +31,7 @@ class FcompsController < ApplicationController
     @fcomp = Fcomp.find(params[:id])
     if @fcomp.update_attributes(fcomp_params)
       flash[:success] = "Company updated"
-      redirect_to root_path
+      redirect_to @fcomp
 
     else
       render 'edit'

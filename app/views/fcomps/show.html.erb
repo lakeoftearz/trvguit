@@ -1,19 +1,24 @@
 <% provide(:title, @fcomp.name) %>
+
+<div class="jumbotron">
+	<h1><%= image_tag @fcomp.logo.url :size => "100x100"  unless @fcomp.logo.blank? %>  
+        <%= @fcomp.name %></h1>
+  
+</div>
+
 <div class="row">
-  <aside class="col-md-4">
+	<h2>Country of origin: <%= @fcomp.country %>  
+		 <%= link_to "Visit Webpage",  url_for(@fcomp.webpage), target: '_blank' %> </h2>
+  <div class="col-md-8">
     <section class="user_info">
-      <h1>
+      <%= link_to "Edit", edit_fcomp_path(@fcomp.id) %>
         
-        <%= @fcomp.name %>
-        <br>
-        <%= @fcomp.country %>
-        <br>
-        <%= @fcomp.rules %>
-        <br>
-        <%= @fcomp.webpage %>
-        <br>
-        <%= image_tag @fcomp.logo.url unless @fcomp.logo.blank? %> 
-      </h1>
+        
+   <h1>  Rules for travelling with musical instruments   </h1>
+   <br>
+    <%= @fcomp.rules.html_safe %>
+        
+        
     </section>
-  </aside>
+  </div>
 </div>

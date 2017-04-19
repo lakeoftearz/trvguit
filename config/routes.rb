@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get '/fcomps', to: 'fcomps#index'
   get '/newfc', to: 'fcomps#new'
   post '/newfc',  to: 'fcomps#create'
-  get '/newreview', to: 'reviews#new'
-  post '/newreview',  to: 'reviews#create'  
+  get '/newreview', to: 'fcomps#newreview'
+  post '/newreview',  to: 'fcomps#createreview'  
   resources :users
   resources :fcomps
   resources :reviews

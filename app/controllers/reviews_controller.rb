@@ -6,8 +6,8 @@ def new
    def create
     @review = Review.new(review_params) 
     if @review.save
-      flash[:success] = "Company Created!"
-      redirect_to @fcomp
+      flash[:success] = "Review Created!"
+      redirect_to root_path
     else
       render 'new'
     end
@@ -15,7 +15,7 @@ def new
   
 def review_params
       
- params.require(:fcomp).permit(:fullname, :country, :email,
+ params.require(:review).permit(:fullname, :country, :email,
                                    :title, :content, :band)
 end
 

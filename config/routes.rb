@@ -15,11 +15,12 @@ Rails.application.routes.draw do
   get '/fcomps', to: 'fcomps#index'
   get '/newfc', to: 'fcomps#new'
   post '/newfc',  to: 'fcomps#create'
-  get '/newreview', to: 'fcomps#newreview'
-  post '/newreview',  to: 'fcomps#createreview'  
+  get '/newreview', to: 'reviews#new'
+  post '/newreview',  to: 'reviews#create'  
   resources :users
-  resources :fcomps
+  resources :fcomps do
   resources :reviews
+  end
  # get 'fcomps/:id/edit', to: 'fcomps#edit'
  # put 'fcomps/:id', to: 'fcomps#update'
 

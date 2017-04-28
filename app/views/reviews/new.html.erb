@@ -1,11 +1,15 @@
 <% provide(:title, 'New Review for Flight Company') %>
 <% provide(:button_text, 'submit') %>
-<h1>New review</h1>
+<h1>New review for <%= @fcomp.name %></h1>
 Add some explanation text
 See if you can modify title text
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= render 'reviewform' %>
+   
+ 
+    <%= render 'reviewform' %> 
+     
+    
     
     <script type="text/javascript">
   $('#fcomp_logo').bind('change', function() {

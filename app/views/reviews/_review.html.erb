@@ -1,6 +1,6 @@
 <li id="review<%= review.id %>">
-  
-  <span class="user"><%= review.fullname %></span>
+  <span class="user"><%= review.title %><%= link_to "- View", fcomp_review_path(review.fcomp, review.id) %></span>
+  <span class="user">Submitted By: <%= review.fullname %></span>
   <span class="content"><%= review.content %></span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(review.created_at) %> ago.

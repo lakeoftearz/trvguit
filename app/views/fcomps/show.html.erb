@@ -12,9 +12,10 @@
   <div class="col-md-8">
     <section class="user_info">
       <%= link_to "Edit", edit_fcomp_path(@fcomp.id) %>
-      <%= link_to "Add new review",  newreview_path %>
+      <%= link_to "Add new review",  new_fcomp_review_path(:fcomp_id=>@fcomp.id)%>
         
-        
+  
+
    <h1>  Rules for travelling with musical instruments   </h1>
    <br>
     <%= @fcomp.rules.html_safe %>
@@ -22,15 +23,18 @@
         
     </section>
   </div>
-</div>
-
-<div class="col-md-8">
+  
+        <div class="col-md-8">        	 
     <% if @fcomp.reviews.any? %>
-      <h3>Review (<%= @fcomp.microposts.count %>)</h3>
+      <h3>Reviews (<%= @fcomp.reviews.count %>)</h3>
       <ol class="microposts">
         <%= render @reviews %>
       </ol>
       <%= will_paginate @reviews %>
     <% end %>
   </div>
+
+
+</div>
+
 

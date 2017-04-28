@@ -1,0 +1,27 @@
+<% provide(:title, @reviews.title) %>
+
+<div class="jumbotron">
+	<h1><%= image_tag @fcomp.logo.url :size => "100x100"  unless @fcomp.logo.blank? %>  
+        <%= @fcomp.name %></h1>
+  
+</div>
+<h1>Review Submitted by: <%= @reviews.fullname %>, <%= @reviews.country %></h1>
+<h1>Band: <%= @reviews.band %></h1>
+<div class="row">
+	<h4>Review text, published at  <%= @reviews.created_at %> </h4>
+		 
+   <br>
+    <%= @reviews.content %>
+  </div>
+  
+  <div class="row"> <!-- admin stuff-->
+  	Published: <%= @reviews.published %> 
+  	<!-- <%= link_to "Publish", edit_fcomp_review_path(@reviews.fcomp_id, @reviews.id), method: :put %> -->
+  	<br>
+  	Public info:  <%= @reviews.publicinfo %>
+  	
+  
+        
+</div>
+
+

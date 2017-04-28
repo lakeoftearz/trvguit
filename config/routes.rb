@@ -20,6 +20,12 @@ Rails.application.routes.draw do
   resources :users
   resources :fcomps do
   resources :reviews
+   member do
+       get :publishreview
+       put :publishreview
+       get :unpublishreview
+       put :unpublishreview
+    end
   end
  # get 'fcomps/:id/edit', to: 'fcomps#edit'
  # put 'fcomps/:id', to: 'fcomps#update'

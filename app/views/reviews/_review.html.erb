@@ -1,5 +1,7 @@
-<li id="review<%= review.id %>">
-  <span class="user"><%= review.title %><%= link_to "- View", fcomp_review_path(review.fcomp, review.id) %></span>
+<li id="review<%=review.id %>">
+  <span class="user"><%= review.title %><%= link_to "- View",
+   fcomp_review_path(review.fcomp, review.id) %>
+   </span>
   <span class="user">Submitted By: <%= review.fullname %></span>
   <span class="content"><%= review.content %></span>
   <span class="timestamp">

@@ -14,8 +14,8 @@ class ReviewsController < ApplicationController
       flash[:success] = "Review Created!"
       redirect_to fcomp_path(@fcomp.id) 
     else
-     # render 'new' and remove below
-      redirect_to root_url
+     render 'new' 
+      
     end
   end
   
@@ -44,6 +44,6 @@ def review_params
    
       
  params.require(:review).permit(:fullname, :country, :email,
-                                   :title, :content, :band)
+                                   :title, :content, :band, :country_name)
 end
 end

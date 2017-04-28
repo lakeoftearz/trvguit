@@ -10,7 +10,8 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'bootstrap-sass', '3.3.5.1'
 #gem 'bcrypt', platforms: :ruby
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
+gem 'country_select', github: 'stefanpenner/country_select' 
 gem 'faker',          '1.6.6'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'

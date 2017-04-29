@@ -24,6 +24,37 @@ class FcompsController < ApplicationController
   def show
     @fcomp = Fcomp.find(params[:id])
     @reviews = @fcomp.reviews.paginate(page: params[:page])
+    
+     @ratings1 = @fcomp.reviews.to_a
+     @avg_rating1 = if @ratings1.blank?
+    0
+  else
+    @fcomp.reviews.average(:rtg1).round(2)
+  end
+     @ratings2 = @fcomp.reviews.to_a
+     @avg_rating2 = if @ratings2.blank?
+    0
+  else
+    @fcomp.reviews.average(:rtg2).round(2)
+  end
+       @ratings3 = @fcomp.reviews.to_a
+     @avg_rating3 = if @ratings3.blank?
+    0
+  else
+    @fcomp.reviews.average(:rtg3).round(2)
+  end
+       @ratings4 = @fcomp.reviews.to_a
+     @avg_rating4 = if @ratings4.blank?
+    0
+  else
+    @fcomp.reviews.average(:rtg4).round(2)
+  end
+       @ratings5 = @fcomp.reviews.to_a
+     @avg_rating5 = if @ratings5.blank?
+    0
+  else
+    @fcomp.reviews.average(:rtg5).round(2)
+  end  
   end
 
  def edit
@@ -58,7 +89,7 @@ end
 end
 
   def fcomp_params
-      params.require(:fcomp).permit(:name, :country, :webpage,
+      params.require(:fcomp).permit(:name, :country, :webpage,:country_name,
                                    :logo, :rules)
     end
     

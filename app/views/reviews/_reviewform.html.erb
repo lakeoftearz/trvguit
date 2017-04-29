@@ -1,4 +1,4 @@
-<%= form_for ([@review.fcomp, @review])  do |f| %>
+<%= simple_form_for ([@review.fcomp, @review])  do |f| %>
  <%= render 'shared/error_reviews' %>
       <%= f.label 'Title of the review (max 100 characters) - displayed in the review list' %>
       <%= f.text_field :title , class: 'form-control' %>
@@ -18,20 +18,11 @@
       <%= f.text_field :email %>
 
       <%= f.label 'Review - please see guidelines before submitting' %>
-      <%= f.text_area :content , class: 'form-control' %>
+      <%= f.trix_editor :content , class: 'form-control' %>
       
-      	<div id="rtg1">
-  		<%= f.label 'Luggage handling', class: 'col-sm-4 form-control-label' %>
-  		<div class="col-sm-6" id='star-rating'></div>
-		</div>
-     
+      
+     	
 
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
 
-<script>
-$('#star-rating').raty({
-    path: '/assets',
-    scoreName: 'review[rtg1]'
-});
-</script>

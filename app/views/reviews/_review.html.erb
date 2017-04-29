@@ -17,8 +17,42 @@
    </span>
    <span class="user">Published: <%= review.published %></span><br>
   <span class="user">Submitted By: <%= review.fullname %></span>
-  <span class="content"><%= review.content %></span>
+  <br>
+  <span class="user">Text preview: <%= truncate(review.content, length: 37, omission: "...#{review.content[-5, 5]}") %></span>
+  <br>
+  
+    <span style="padding-right:5px;">Luggage handling: </span>
+     <span class="star-rating" data-score= <%= review.rtg1 %> >   	        
+      </span><br>
+      <span style="padding-right:6px;">Customer Service: </span>  
+    <span class="star-rating" data-score= <%= review.rtg2 %>>    	      
+      </span>        
+      </span><br>
+      <span style="padding-right:41px;">Friendliness: </span>  
+     <span class="star-rating" data-score= <%= review.rtg3 %>>     	      
+      </span>        
+    </span><br>
+    <span style="padding-right:16px;">Value for Money:</span>
+     <span class="star-rating" data-score= <%= review.rtg4 %>>     	        
+      </span>          
+     </span><br>
+     <span style="padding-right:49px;">Punctuality:</span>   
+    <span class="star-rating" data-score= <%= review.rtg5 %>>
+    	     
+      </span>          
+     </span><br>
+     
   <span class="timestamp">
     Posted <%= time_ago_in_words(review.created_at) %> ago.
   </span>
 </li>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

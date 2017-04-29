@@ -11,7 +11,6 @@ class Review < ApplicationRecord
   validates :country, presence: true
   validates :content,  presence: true
 
-
  def country_name
     country = self.country
     ISO3166::Country[country]

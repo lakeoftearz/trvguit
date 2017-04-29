@@ -7,8 +7,58 @@ See if you can modify title text
   <div class="col-md-6 col-md-offset-3">
    
  
-    <%= render 'reviewform' %> 
-     
+    <%= simple_form_for ([@review.fcomp, @review])  do |f| %>
+ <%= render 'shared/error_reviews' %>
+      <%= f.label 'Title of the review (max 100 characters) - displayed in the review list' %>
+      <%= f.text_field :title , class: 'form-control' %>
+      
+            <%= f.label 'Your Fullname - displayed as Submitted by' %>
+      <%= f.text_field :fullname , class: 'form-control' %>
+      
+      <%= f.label 'Your country of origin' %>
+      <%= f.country_select :country , :include_blank => true, class: 'form-control' %>
+      
+      
+         <%= f.label 'The band(s) you play in' %>
+      <%= f.text_field :band , class: 'form-control' %>
+      
+
+      <%= f.label 'Email address' %>
+      <%= f.text_field :email %>
+
+      <%= f.label 'Review - please see guidelines before submitting' %>
+      <%= f.trix_editor :content , class: 'form-control' %>
+      
+        
+     <h3>Add ratings</h3>
+      	<div class="form-group row">
+  		<%= f.label 'Luggage handling', class: 'col-sm-4 form-control-label' %>  				
+  		  	<div class="col-sm-6" id='star-rating1'></div>
+  		</div>  	
+  		<div class="form-group row">
+  		<%= f.label 'Customer Service', class: 'col-sm-4 form-control-label' %>  				
+  		  	<div class="col-sm-6" id='star-rating2'></div>
+		</div>
+		  		<div class="form-group row">
+  		<%= f.label 'Friendliness', class: 'col-sm-4 form-control-label' %>  				
+  		  	<div class="col-sm-6" id='star-rating3'></div>
+		</div>
+				  		<div class="form-group row">
+  		<%= f.label 'Value for Money', class: 'col-sm-4 form-control-label' %>  				
+  		  	<div class="col-sm-6" id='star-rating4'></div>
+		</div>
+     			  		<div class="form-group row">
+  		<%= f.label 'Punctuality', class: 'col-sm-4 form-control-label' %>  				
+  		  	<div class="col-sm-6" id='star-rating5'></div>
+		</div>
+     	
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
+
+
+   
+     	
     
     
     <script type="text/javascript">
@@ -20,5 +70,33 @@ See if you can modify title text
   });
 </script>
 
+<script>
+$('#star-rating1').raty({
+    path: '/assets',
+    scoreName: 'review[rtg1]'
+    
+});
+
+$('#star-rating2').raty({
+    path: '/assets',
+    scoreName: 'review[rtg2]'
+});
+$('#star-rating3').raty({
+    path: '/assets',
+    scoreName: 'review[rtg3]'
+});
+$('#star-rating4').raty({
+    path: '/assets',
+    scoreName: 'review[rtg4]'
+});
+$('#star-rating5').raty({
+    path: '/assets',
+    scoreName: 'review[rtg5]'
+});
+
+
+
+
+</script>
   </div>
 </div>

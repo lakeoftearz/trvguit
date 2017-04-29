@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-	<h2>Country of origin: <%= @fcomp.country %>  
+	<h2>Country of origin: <%= @fcomp.country_name %>   
 		 <%= link_to "Visit Webpage",  url_for(@fcomp.webpage), target: '_blank' %> </h2>
   <div class="col-md-8">
     <section class="user_info">
@@ -15,6 +15,31 @@
       <%= link_to "Add new review",  new_fcomp_review_path(:fcomp_id=>@fcomp.id)%>
         
   
+<h3>Review score so far</h3>
+      
+<span style="padding-right:5px;">Luggage handling:</span>
+     <span class="star-rating" data-score= <%= @avg_rating1 %>>     	        
+     </span><br>      
+      <span style="padding-right:6px;">Customer Service: </span>  
+    <span class="star-rating" data-score= <%= @avg_rating2 %>>    	      
+      </span>        
+      </span><br>
+      <span style="padding-right:41px;">Friendliness: </span>  
+     <span class="star-rating" data-score= <%= @avg_rating3 %>>     	      
+      </span>        
+    </span><br>
+    <span style="padding-right:16px;">Value for Money:</span>
+     <span class="star-rating" data-score= <%= @avg_rating4 %>>     	        
+      </span>          
+     </span><br>
+     <span style="padding-right:49px;">Punctuality:</span>   
+    <span class="star-rating" data-score= <%= @avg_rating5 %>>
+    	     
+      </span>          
+     </span><br>
+         
+<br>
+<em><%= "#{@ratings1.size} reviews" %></em>
 
    <h1>  Rules for travelling with musical instruments   </h1>
    <br>

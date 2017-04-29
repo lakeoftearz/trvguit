@@ -7,4 +7,10 @@ class Fcomp < ApplicationRecord
   validates :country, presence: true
   validates :webpage, presence: true
   validates :rules, presence: true
+  
+   def country_name
+    country = self.country
+    ISO3166::Country[country]
+   end
+   
 end

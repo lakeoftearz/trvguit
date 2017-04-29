@@ -4,13 +4,13 @@
       <%= f.text_field :name %>
 
       <%= f.label :country %>
-      <%= f.text_field :country %>
+      <%= f.country_select :country , :include_blank => true, class: 'form-control' %>
 
       <%= f.label :webpage %>
       <%= f.text_field :webpage %>
 
       <%= f.label :rules %>
-      <%= f.text_area :rules %>
+      <%= f.trix_editor :rules %>
       
       <span class="picture">
     <%= f.file_field :logo, accept: 'image/jpeg,image/gif,image/png' %>

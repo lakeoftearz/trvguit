@@ -1,8 +1,9 @@
 <% provide(:title, @fcomp.name) %>
 
 <div class="jumbotron">
-	<h1>Review for <%= image_tag @fcomp.logo.url :size => "100x100"  unless @fcomp.logo.blank? %>  
-        <%= @fcomp.name %></h1>
+	<h1>Review for   
+        <%= @fcomp.name %>
+        <%= image_tag @fcomp.logo.url :size => "100x100"  unless @fcomp.logo.blank? %></h1>
   
 </div>
 <%= link_to(@fcomp) do %>
@@ -15,24 +16,58 @@
    publishreview_fcomp_path(@fcomp.id, @reviews.id) %>
    <%= link_to "- Unpublish",
    unpublishreview_fcomp_path(@fcomp.id, @reviews.id) %>
-   <span class="user">Published: <%= @reviews.published %></span><br>
-<div class="row">
-  <span class="user">Review Title: <%= @reviews.title %>
+   
+   <br>
+   <span class="user">Published (admin only): <%= @reviews.published %></span><br>
+     <span class="user">Review Title: <%= @reviews.title %>
   </span><br>
-  <% unless @reviews.band.blank? %>
+   <span class="user">Submitted By: <%= @reviews.fullname %> from  <%= @reviews.country_name %>
+  	</span><br>
+  	   <span class="user">Email - admin only: <%= @reviews.email %> 
+  	</span><br>
+  	 <% unless @reviews.band.blank? %>
     <span class="user">Band(s): <%= @reviews.band %>
   </span><br>
   <% end %>
-  <span class="user">Submitted By: <%= @reviews.fullname %> from  <%= @reviews.country_name %>
-  	</span>
-  
-  <br>
-
-  <span class="content">Content: <%= @reviews.content %></span><br>
-  <span class="timestamp">
+    <span class="timestamp">
     Posted <%= time_ago_in_words(@reviews.created_at) %> ago.
   </span>
-</div>
-</div>
+  
+  <br><br>
+	
+   <span class="star-rating" data-score= <%= @reviews.rtg1 %> >
+   	<span style="padding-right:5px;">Luggage handling: </span>        
+      </span><br>
+    <span class="star-rating" data-score= <%= @reviews.rtg2 %>>
+    	<span style="padding-right:6px;">Customer Service: </span>        
+      </span>        
+      </span><br>
+     <span class="star-rating" data-score= <%= @reviews.rtg3 %>>
+     	<span style="padding-right:41px;">Friendliness: </span>        
+      </span>        
+     </span><br>
+     <span class="star-rating" data-score= <%= @reviews.rtg4 %>>
+     	<span style="padding-right:16px;">Value for Money:</span>        
+      </span>          
+     </span><br>
+    <span class="star-rating" data-score= <%= @reviews.rtg5 %>>
+    	<span style="padding-right:49px;">Punctuality:</span>        
+      </span>          
+     </span><br>
+  
+ 
+
+  
+  <span class="content">Content: <%= @reviews.content %></span><br>
 
 
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

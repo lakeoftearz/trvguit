@@ -1,24 +1,37 @@
 <%= form_for ([@review.fcomp, @review])  do |f| %>
+ <%= render 'shared/error_reviews' %>
       <%= f.label 'Title of the review (max 100 characters) - displayed in the review list' %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title , class: 'form-control' %>
       
             <%= f.label 'Your Fullname - displayed as Submitted by' %>
-      <%= f.text_field :fullname %>
+      <%= f.text_field :fullname , class: 'form-control' %>
       
       <%= f.label 'Your country of origin' %>
-      <%= f.country_select :country %>
+      <%= f.country_select :country , :include_blank => true, class: 'form-control' %>
       
       
          <%= f.label 'The band(s) you play in' %>
-      <%= f.text_field :band %>
+      <%= f.text_field :band , class: 'form-control' %>
       
 
       <%= f.label 'Email address' %>
       <%= f.text_field :email %>
 
       <%= f.label 'Review - please see guidelines before submitting' %>
-      <%= f.text_area :content %>
-           
+      <%= f.text_area :content , class: 'form-control' %>
+      
+      	<div id="rtg1">
+  		<%= f.label 'Luggage handling', class: 'col-sm-4 form-control-label' %>
+  		<div class="col-sm-6" id='star-rating'></div>
+		</div>
+     
 
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
+
+<script>
+$('#star-rating').raty({
+    path: '/assets',
+    scoreName: 'review[rtg1]'
+});
+</script>

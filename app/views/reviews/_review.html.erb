@@ -1,7 +1,21 @@
 <li id="review<%=review.id %>">
-  <span class="user"><%= review.title %><%= link_to "- View",
-   fcomp_review_path(review.fcomp, review.id) %>
+  
+   
+   <span class="user">
+   <%= link_to fcomp_review_path(review.fcomp, review.id)  do %>
+  <strong><%= review.title %></strong> 
+<% end %>
+<br>
+   <%= link_to "Edit",
+   edit_fcomp_review_path(review.fcomp, review.id) %>
+   
+      <%= link_to "- Publish",
+   publishreview_fcomp_path(review.fcomp, review.id) %>
+   
+    <%= link_to "- Unpublish",
+   unpublishreview_fcomp_path(review.fcomp, review.id) %>
    </span>
+   <span class="user">Published: <%= review.published %></span><br>
   <span class="user">Submitted By: <%= review.fullname %></span>
   <span class="content"><%= review.content %></span>
   <span class="timestamp">

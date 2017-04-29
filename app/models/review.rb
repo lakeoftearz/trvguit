@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  
     before_save { self.email = email.downcase }
   belongs_to :fcomp
   default_scope -> { order(created_at: :desc) }

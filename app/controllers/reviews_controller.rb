@@ -22,20 +22,26 @@ class ReviewsController < ApplicationController
     def show
     @fcomp = Fcomp.find(params[:fcomp_id])
     @reviews = @fcomp.reviews.find(params[:id])
+    @rating1 = @fcomp.reviews.to_a
   end
 
 
   def update
   @fcomp = Fcomp.find(params[:fcomp_id])
     @review = @fcomp.reviews.find(params[:id])
-    @review.update_attributes(published: true)
-     fcomp_review_path(review.fcomp, review.id)
+     
+   if  @review.update_attributes(review_params)  
+     
+     flash[:success] = "Review Updated"
+     redirect_to fcomp_review_path(@fcomp.id, @review.id)
+   else
+     render 'edit'
+   end
+   
 end
 
-def edit
-      
-    @fcomp = Fcomp.find(params[:fcomp_id])
-    
+def edit      
+    @fcomp = Fcomp.find(params[:fcomp_id])    
     @review = @fcomp.reviews.find(params[:id])
   end
   
@@ -44,6 +50,7 @@ def review_params
    
       
  params.require(:review).permit(:fullname, :country, :email,
-                                   :title, :content, :band, :country_name)
+                                   :title, :content, :band, :country_name,
+                                   :rtg1, :rtg2, :rtg3, :rtg4, :rtg5)
 end
 end

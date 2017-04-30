@@ -1,5 +1,9 @@
 class FcompsController < ApplicationController
+   before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :save, :publishreview, :unpublishreview]
   
+  before_action :admin_user,     only:  [:edit, :update, :destroy, 
+    :create, :save, :publishreview, :unpublishreview]
+
   def index
     @fcomps = Fcomp.all
   end
@@ -25,31 +29,32 @@ class FcompsController < ApplicationController
     @fcomp = Fcomp.find(params[:id])
     @reviews = @fcomp.reviews.paginate(page: params[:page])
     
-     @ratings1 = @fcomp.reviews.to_a
+    @pubreviews = @reviews.where(published: true)
+     @ratings1 = @fcomp.reviews.where(published: true).to_a
      @avg_rating1 = if @ratings1.blank?
     0
   else
     @fcomp.reviews.average(:rtg1).round(2)
   end
-     @ratings2 = @fcomp.reviews.to_a
+     @ratings2 = @fcomp.reviews.where(published: true).to_a
      @avg_rating2 = if @ratings2.blank?
     0
   else
     @fcomp.reviews.average(:rtg2).round(2)
   end
-       @ratings3 = @fcomp.reviews.to_a
+       @ratings3 = @fcomp.reviews.where(published: true).to_a
      @avg_rating3 = if @ratings3.blank?
     0
   else
     @fcomp.reviews.average(:rtg3).round(2)
   end
-       @ratings4 = @fcomp.reviews.to_a
+       @ratings4 = @fcomp.reviews.where(published: true).to_a
      @avg_rating4 = if @ratings4.blank?
     0
   else
     @fcomp.reviews.average(:rtg4).round(2)
   end
-       @ratings5 = @fcomp.reviews.to_a
+       @ratings5 = @fcomp.reviews.where(published: true).to_a
      @avg_rating5 = if @ratings5.blank?
     0
   else
@@ -93,6 +98,5 @@ end
                                    :logo, :rules)
     end
     
-      
-
+ 
 end

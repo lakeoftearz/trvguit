@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: 23b0517e20e7ddf2e733c1bcdb22b0b12166f042
+  specs:
+    bcrypt (3.1.11)
+
+GIT
   remote: https://github.com/stefanpenner/country_select.git
   revision: fb476551aa61e68af2175aeb4d097148e6904a34
   specs:
@@ -235,7 +241,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bcrypt
+  bcrypt!
   bootstrap-sass (= 3.3.5.1)
   bootstrap-will_paginate (= 0.0.10)
   byebug

@@ -9,7 +9,9 @@
 <%= link_to(@fcomp) do %>
   <strong>Back to <%= @fcomp.name %></strong> 
 <% end %>
-
+<br>
+ <% if logged_in? %>
+         <% if current_user.admin?%>
  <%= link_to "- Edit",
    edit_fcomp_review_path(@fcomp.id, @reviews.id) %>
   <%= link_to "- Publish",
@@ -19,12 +21,15 @@
    
    <br>
    <span class="user">Published (admin only): <%= @reviews.published %></span><br>
+     	   <span class="user">Email - admin only: <%= @reviews.email %> 
+  	</span><br>
+             	<% end %>  
+	    <% end %> 
      <span class="user">Review Title: <%= @reviews.title %>
   </span><br>
    <span class="user">Submitted By: <%= @reviews.fullname %> from  <%= @reviews.country_name %>
   	</span><br>
-  	   <span class="user">Email - admin only: <%= @reviews.email %> 
-  	</span><br>
+
   	 <% unless @reviews.band.blank? %>
     <span class="user">Band(s): <%= @reviews.band %>
   </span><br>
@@ -34,7 +39,7 @@
   </span>
   
   <br><br>
-	
+	<h2>Review Score</h2>
    <span class="star-rating" data-score= <%= @reviews.rtg1 %> >
    	<span style="padding-right:5px;">Luggage handling: </span>        
       </span><br>
@@ -58,7 +63,7 @@
  
 
   
-  <span class="content">Content: <%= @reviews.content %></span><br>
+  <span class="content"><h2>Review Text</h2> <%= @reviews.content.html_safe %></span><br>
 
 
 

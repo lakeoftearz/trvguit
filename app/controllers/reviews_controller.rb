@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+     before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :save]
+  
+  before_action :admin_user,     only:  [:edit, :update, :destroy, ]
   def new    
    @fcomp = Fcomp.find(params[:fcomp_id])
    @review = @fcomp.reviews.new
@@ -53,4 +56,6 @@ def review_params
                                    :title, :content, :band, :country_name,
                                    :rtg1, :rtg2, :rtg3, :rtg4, :rtg5)
 end
+
+
 end

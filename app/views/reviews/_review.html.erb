@@ -6,6 +6,8 @@
   <strong><%= review.title %></strong> 
 <% end %>
 <br>
+    	 <% if logged_in? %>
+         <% if current_user.admin?%>
    <%= link_to "Edit",
    edit_fcomp_review_path(review.fcomp, review.id) %>
    
@@ -14,11 +16,16 @@
    
     <%= link_to "- Unpublish",
    unpublishreview_fcomp_path(review.fcomp, review.id) %>
+          	<% end %>  
+	    <% end %> 
    </span>
+       	 <% if logged_in? %>
+         <% if current_user.admin?%>
    <span class="user">Published: <%= review.published %></span><br>
-  <span class="user">Submitted By: <%= review.fullname %></span>
-  <br>
-  <span class="user">Text preview: <%= truncate(review.content, length: 37, omission: "...#{review.content[-5, 5]}") %></span>
+             	<% end %>  
+	    <% end %> 
+  
+  <span class="user">Text preview: <%= truncate(review.content.html_safe, length: 37, omission: "...#{review.content[-5, 5]}") %></span>
   <br>
   
     <span style="padding-right:5px;">Luggage handling: </span>
@@ -43,7 +50,7 @@
      </span><br>
      
   <span class="timestamp">
-    Posted <%= time_ago_in_words(review.created_at) %> ago.
+    Posted <%= time_ago_in_words(review.created_at) %> ago. Submitted By: <%= review.fullname %>
   </span>
 </li>
 

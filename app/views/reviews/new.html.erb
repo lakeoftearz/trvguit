@@ -1,8 +1,19 @@
-<% provide(:title, 'New Review for Flight Company') %>
+<% provide(:title, 'New Review') %>
 <% provide(:button_text, 'submit') %>
 <h1>New review for <%= @fcomp.name %></h1>
-Add some explanation text
-See if you can modify title text
+
+<p>Please write below your experience when travelling with a musical instrument 
+	with <%= @fcomp.name %> airline </p>
+	<p>Note that the review is not published automatically. It has to be checked by an admin 
+		first and you would be contacted by email should there be any questions</p>
+		
+		<p>
+				
+  <%= link_to 'Here', "#", :rel => "tooltip",  
+  :title => "#{render 'reviews/guidelines'}".html_safe  %>
+
+
+ you can read the guidelines for submitting a review</p>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
    
@@ -25,8 +36,10 @@ See if you can modify title text
 
       <%= f.label 'Email address' %>
       <%= f.text_field :email %>
-
-      <%= f.label 'Review - please see guidelines before submitting' %>
+      
+  
+      <%= f.label 'Review text - ' %>     <%= link_to 'please see guidelines before submitting', "#", :rel => "tooltip",  
+  :title => "#{render 'reviews/guidelines'}".html_safe  %>
       <%= f.trix_editor :content , class: 'form-control' %>
       
         
@@ -98,5 +111,7 @@ $('#star-rating5').raty({
 
 
 </script>
+
+
   </div>
 </div>

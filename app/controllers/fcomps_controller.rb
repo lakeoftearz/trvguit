@@ -1,5 +1,5 @@
 class FcompsController < ApplicationController
-   before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :save, :publishreview, :unpublishreview]
+   before_action :logged_in_user, only: [:edit, :update, :destroy, :create, :save,  :publishreview, :unpublishreview]
   
   before_action :admin_user,     only:  [:edit, :update, :destroy, 
     :create, :save, :publishreview, :unpublishreview]

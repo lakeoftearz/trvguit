@@ -47,6 +47,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 group :development do
   gem 'web-console'
+   gem "capistrano", "~> 3.8"
 end
 
 group :development, :test do

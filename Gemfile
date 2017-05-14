@@ -53,6 +53,9 @@ group :development do
   gem 'capistrano-postgresql',
     :git => "https://github.com/snake66/capistrano-postgresql.git",
     :branch => 'make-sudo-optional'
+
+  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 end
 
 group :development, :test do
@@ -77,6 +80,3 @@ group :production do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
 
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

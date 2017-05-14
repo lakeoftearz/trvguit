@@ -15,6 +15,7 @@ class Review < ApplicationRecord
   validates_presence_of :rtg3,  :message => "Add a score for Friendliness"
   validates_presence_of :rtg4,  :message => "Add a score for Value for Money"
   validates_presence_of :rtg5,   :message => "Add a score for Punctuality"
+  attr_accessor :custom_field
 
  def country_name
     country = self.country

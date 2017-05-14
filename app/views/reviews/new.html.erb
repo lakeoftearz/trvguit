@@ -8,11 +8,8 @@
 		first and you would be contacted by email should there be any questions</p>
 		
 		<p>
-				
-  <%= link_to 'Here', "#", :rel => "tooltip",  
-  :title => "#{render 'reviews/guidelines'}".html_safe  %>
 
-
+	<a href="#about" data-toggle="modal">Here</a>
  you can read the guidelines for submitting a review</p>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -38,10 +35,14 @@
       <%= f.text_field :email %>
       
   
-      <%= f.label 'Review text - ' %>     <%= link_to 'please see guidelines before submitting', "#", :rel => "tooltip",  
-  :title => "#{render 'reviews/guidelines'}".html_safe  %>
+      <%= f.label 'Review text - ' %>    
       <%= f.trix_editor :content , class: 'form-control' %>
       
+      <br>
+      <div class='off-form'>
+      <%= hidden_field_tag :custom_field, 'false' %>
+        <%= f.input :custom_field, :as => :boolean,  input_html: {checked: false} %>
+        </div>
         
      <h3>Add ratings</h3>
       	<div class="form-group row">
@@ -66,7 +67,7 @@
 		</div>
      	
 
-      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <%= f.submit yield(:button_text), class: "btn btn-primary"  %>
 <% end %>
 
 
@@ -109,9 +110,17 @@ $('#star-rating5').raty({
 
 
 
-
 </script>
 
-
+<div class="modal fade" id="about" role="dialog">
+	<div class = "modal-dialogue">
+		<div class = "modal-content ">
+			<div class = "modal-header">
+				<%=render :file => 'static_pages/help.html.erb' %> 
+		</div>
+	</div>
+	</div>
+	</div>
+	
   </div>
 </div>

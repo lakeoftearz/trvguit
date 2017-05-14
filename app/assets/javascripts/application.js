@@ -13,7 +13,12 @@
 //= require jquery
 //= require jquery.raty
 //= require jquery_ujs
+//= require filterrific/filterrific-jquery
 //= require bootstrap
 //= require turbolinks
 //= require trix
 //= require_tree .
+jQuery( function($) {
+    $('a').tooltip();
+});
+

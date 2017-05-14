@@ -1,0 +1,25 @@
+<div id="filterrific_results">
+<%("A".."Z").map do |letter|%>
+<div class="row"><!--<h3><%=  letter %><h3> -->
+	<% @fcomps.order(:name).each do |f| %>
+	
+	<% if f.name.capitalize.starts_with?(letter) %>
+	<div class="col-md-1 col-xs-6"> 	
+	
+     <%= link_to fcomp_path(f.id) do %>  
+     <%= image_tag f.logo.url, :title => f.name, :size => "50x50" unless f.logo.blank? %> 
+       <% end %>
+      
+     	 <% if logged_in? %>
+         <% if current_user.admin?%>
+     	 <%= link_to "Edit", edit_fcomp_path(f.id) %>
+     	 	<% end %>  
+	<% end %> 
+     	    	
+     	
+     	</div>  
+	<% end %>  
+	<% end %> 
+</div> 
+<% end %> 
+</div>

@@ -1,0 +1,45 @@
+<% provide(:title, 'Unpublished reviews') %>
+
+<p>
+	A list of all unpublished reviews
+	</p>
+ <% if logged_in? %>
+         <% if current_user.admin?%>
+	
+
+ 	
+	<% @reviews.order(:created_at).each do |f| %>
+
+<div class="row">	
+	Title: <%= f.title %><br>
+	Company: <%= f.fcomp.name %> <br>
+	Submitted by: <%= f.fullname %>, country <%= f.country %> 
+	 from bands <%= f.band %>  at <%= f.created_at %><br>
+	Contact email address is: <%= f.email %>  
+	<br>
+	Published: <%= f.published %>
+ 
+<br>
+<%= link_to "Edit",
+   edit_fcomp_review_path(f.fcomp, f.id) %>
+   
+      <%= link_to "- Publish",
+   publishreview_fcomp_path(f.fcomp, f.id) %>
+   
+    <%= link_to "- Unpublish",
+   unpublishreview_fcomp_path(f.fcomp, f.id) %>
+   
+   <%= link_to '- Destroy',  f,  method: :delete, data: { confirm: 'Are you sure?' } %>
+
+	  </div>
+	
+	<%end%>
+	<div class="col-md-1 col-xs-6"> 
+	
+
+     	</div>  
+  
+<% end %>  
+	<% end %> 
+
+   

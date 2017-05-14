@@ -17,7 +17,7 @@ gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'carrierwave',             '0.11.2'
 gem 'mini_magick',             '4.5.1'
-
+gem 'filterrific'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'simple_form'
@@ -25,12 +25,14 @@ gem 'simple_form'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'execjs'
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -48,6 +50,11 @@ gem 'jbuilder', '~> 2.5'
 group :development do
   gem 'web-console'
    gem "capistrano", "~> 3.8"
+   gem 'capistrano-rails'
+    gem 'capistrano-bundler'
+    gem 'capistrano-postgresql',
+    :git => "https://github.com/snake66/capistrano-postgresql.git",
+    :branch => 'make-sudo-optional'
 end
 
 group :development, :test do

@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get '/newfc', to: 'fcomps#new'
   post '/newfc',  to: 'fcomps#create'
   get '/newreview', to: 'reviews#new'
-  post '/newreview',  to: 'reviews#create'  
+  post '/newreview',  to: 'reviews#create'    
   resources :users
   resources :fcomps do
-  resources :reviews
+  resources :reviews, only: [ :new, :create, :show, :edit, :update]
    member do
        get :publishreview
        put :publishreview
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
        put :unpublishreview
     end
   end
+  resources :reviews, only: [ :index, :destroy]
  # get 'fcomps/:id/edit', to: 'fcomps#edit'
  # put 'fcomps/:id', to: 'fcomps#update'
 

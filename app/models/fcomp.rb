@@ -1,4 +1,15 @@
 class Fcomp < ApplicationRecord
+  filterrific(
+  
+  available_filters: [ 
+    :search_query
+  ]
+)
+
+ scope :search_query, lambda { |query|
+    where("name ILIKE ?", "%#{query}%")
+  }
+   
   has_many :reviews, dependent: :destroy
   accepts_nested_attributes_for :reviews
   default_scope -> { order(:name) }
@@ -12,5 +23,10 @@ class Fcomp < ApplicationRecord
     country = self.country
     ISO3166::Country[country]
    end
+   
+   
+
+
+
    
 end

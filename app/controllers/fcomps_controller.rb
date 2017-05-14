@@ -5,8 +5,21 @@ class FcompsController < ApplicationController
     :create, :save, :publishreview, :unpublishreview]
 
   def index
-    @fcomps = Fcomp.all
+    @fcomps = Fcomp.all 
+     @filterrific = initialize_filterrific(
+    Fcomp,
+    params[:filterrific]
+  ) or return
+  @fcomps = @filterrific.find.page(params[:page])
+
+  respond_to do |format|
+    format.html
+    format.js
+  
+    end
   end
+  
+  
 
 
   def new

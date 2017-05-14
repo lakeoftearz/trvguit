@@ -16,6 +16,9 @@
    
     <%= link_to "- Unpublish",
    unpublishreview_fcomp_path(review.fcomp, review.id) %>
+   
+    <%= link_to '- Destroy',  review,  method: :delete, data: { confirm: 'Are you sure?' } %>
+
           	<% end %>  
 	    <% end %> 
    </span>

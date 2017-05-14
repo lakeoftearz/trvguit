@@ -8,10 +8,10 @@ development:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: development
+  database: trvguit_development
   pool: 5
-  username: rubio
-  password: rubio
+  username: <%= ENV['TRVGUIT_DB_USER'] %>
+  password: <%= ENV['TRVGUIT_DB_PASSWD'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -20,16 +20,16 @@ test:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: testdb
+  database: trvguit_test
   pool: 5
-  username: rubio
-  password: rubio
+  username: <%= ENV['TRVGUIT_DB_USER'] %>
+  password: <%= ENV['TRVGUIT_DB_PASSWD'] %>
 
 production:
   adapter: postgresql
   encoding: unicode
   host: localhost
-  database: proddb
+  database: trvguit_production
   pool: 5
-  username: rubio
-  password: rubio
+  username: <%= ENV['TRVGUIT_DB_USER'] %>
+  password: <%= ENV['TRVGUIT_DB_PASSWD'] %>

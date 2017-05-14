@@ -11,7 +11,7 @@ gem 'rails', '~> 5.0.2'
 gem 'bootstrap-sass', '3.3.5.1'
 gem 'trix'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
-gem 'country_select', github: 'stefanpenner/country_select' 
+gem 'country_select', github: 'stefanpenner/country_select'
 gem 'faker',          '1.6.6'
 gem 'will_paginate',           '3.1.0'
 gem 'bootstrap-will_paginate', '0.0.10'
@@ -49,17 +49,23 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 group :development do
   gem 'web-console'
-   gem "capistrano", "~> 3.8"
-   gem 'capistrano-rails'
-    gem 'capistrano-bundler'
-    gem 'capistrano-postgresql',
+
+
+  gem "capistrano", "~> 3.8"
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-postgresql',
     :git => "https://github.com/snake66/capistrano-postgresql.git",
     :branch => 'make-sudo-optional'
+
+  # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  
+
   gem 'byebug', platform: :mri
 #   gem 'web-console',           '3.3.0'
   gem 'listen',                '3.0.8'
@@ -77,8 +83,5 @@ end
 
 group :production do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  
-end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+end

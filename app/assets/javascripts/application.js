@@ -16,9 +16,19 @@
 //= require filterrific/filterrific-jquery
 //= require bootstrap
 //= require turbolinks
-//= require trix
+//= require froala_editor.min.js
+//= require plugins/align.min.js
+//= require plugins/draggable.min.js
+//= require plugins/entities.min.js
+//= require plugins/inline_style.min.js
+//= require plugins/lists.min.js
+//= require plugins/paragraph_format.min.js
+//= require plugins/paragraph_style.min.js
+//= require plugins/colors.min.js
+//= require plugins/quote.min.js
 //= require_tree .
 jQuery( function($) {
     $('a').tooltip();
 });
+$('selector').froalaEditor();
 

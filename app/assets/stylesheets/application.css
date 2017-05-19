@@ -12,5 +12,13 @@
  *
  *= require_tree .
  *= require_self
- *= require trix
  */
+/*
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
+ *= require font-awesome
+ *= require plugins/draggable.min.css
+ *= require plugins/colors.min.css
+ *= require plugins/line_breaker.min.css
+ *= require plugins/quick_insert.min.css
+*/

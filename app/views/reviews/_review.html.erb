@@ -28,7 +28,8 @@
              	<% end %>  
 	    <% end %> 
   
-  <span class="user">Text preview: <%= truncate(review.content.html_safe, length: 37, omission: "...#{review.content[-5, 5]}") %></span>
+  <span class="user">Text preview: <%= truncate(review.content.html_safe, length: 150, 
+  omission: "...#{review.content[-15, 15]}", :escape => false) %></span>
   <br>
   
     <span style="padding-right:5px;">Luggage handling: </span>

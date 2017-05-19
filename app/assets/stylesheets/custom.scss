@@ -1,6 +1,5 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -269,10 +268,10 @@ span.picture {
 input#search {
     width: 250px;
 }
-input, textarea, select, .uneditable-input {
+}
+input#filterrific_search_query {
   border: 1px solid #bbb;
   width: 10%;
   margin-bottom: 15px;
   @include box_sizing;
-}
 }

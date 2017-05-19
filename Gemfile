@@ -9,7 +9,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 gem 'bootstrap-sass', '3.3.5.1'
-gem 'trix'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'country_select', github: 'stefanpenner/country_select'
 gem 'faker',          '1.6.6'
@@ -33,6 +32,8 @@ gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'execjs'
 gem 'therubyracer', platforms: :ruby
+gem 'wysiwyg-rails'
+gem 'font-awesome-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

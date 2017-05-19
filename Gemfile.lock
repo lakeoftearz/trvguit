@@ -112,6 +112,10 @@ GEM
     ffi (1.9.18)
     ffi (1.9.18-x86-mingw32)
     filterrific (2.1.2)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     formatador (0.2.5)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
@@ -256,8 +260,6 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
-    trix (0.10.1)
-      rails
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -277,6 +279,9 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     will_paginate (3.1.0)
+    wysiwyg-rails (2.6.0)
+      font-awesome-sass (~> 4.4, >= 4.4.0)
+      railties (>= 3.2, < 6.0)
 
 PLATFORMS
   ruby
@@ -297,6 +302,7 @@ DEPENDENCIES
   execjs
   faker (= 1.6.6)
   filterrific
+  font-awesome-rails
   guard (= 2.13.0)
   guard-minitest (= 2.4.4)
   jbuilder (~> 2.5)
@@ -314,12 +320,12 @@ DEPENDENCIES
   spring (= 1.7.2)
   spring-watcher-listen (= 2.0.0)
   therubyracer
-  trix
   turbolinks (~> 5)
   tzinfo-data
   uglifier
   web-console
   will_paginate (= 3.1.0)
+  wysiwyg-rails
 
 BUNDLED WITH
    1.14.6

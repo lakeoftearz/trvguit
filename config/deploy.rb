@@ -29,11 +29,13 @@ set :bundle_env_variables, {
 # Default value for :pty is false
 # set :pty, true
 
-# Default value for :linked_files is []
+# Files linked in from shared_path for every deploy
 append :linked_files,
-"config/database.yml"
+  "config/database.yml",
+  "config/puma.rb",
+  "config/secrets.yml"
 
-# Default value for linked_dirs is []
+# Dirs linked in from shared_path for every deploy
 append :linked_dirs,
   "log",
   "tmp/pids",

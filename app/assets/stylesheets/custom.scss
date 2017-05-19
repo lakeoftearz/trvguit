@@ -265,7 +265,7 @@ span.picture {
      visibility: hidden;
 }
 
-.searchform
+.searchform {
 input#search {
     width: 250px;
 }
@@ -274,4 +274,5 @@ input, textarea, select, .uneditable-input {
   width: 10%;
   margin-bottom: 15px;
   @include box_sizing;
+}
 }

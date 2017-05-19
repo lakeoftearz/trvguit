@@ -10,7 +10,7 @@ development:
   host: localhost
   database: trvguit_development
   pool: 5
-  username: <%= ENV['TRVGUIT_DB_USER'] %>
+  username: <%= ENV['TRVGUIT_DB_PASSWD'] %>
   password: <%= ENV['TRVGUIT_DB_PASSWD'] %>
 
 # Warning: The database defined as "test" will be erased and
@@ -32,5 +32,5 @@ production:
   database: trvguit_production
   pool: 5
   username: <%= ENV['TRVGUIT_DB_USER'] %>
-password: <%= ENV['TRVGUIT_DB_PASSWD'] %>
+  password: <%= ENV['TRVGUIT_DB_PASSWD'] %>
 

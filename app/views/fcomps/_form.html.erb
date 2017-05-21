@@ -10,7 +10,7 @@
       <%= f.text_field :webpage %>
 
       <%= f.label :rules %>
-      <%= f.trix_editor :rules %>
+      <%= f.text_area :rules %>
       
       <span class="picture">
     <%= f.file_field :logo, accept: 'image/jpeg,image/gif,image/png' %>
@@ -18,3 +18,19 @@
 
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
+
+<script type="text/javascript">    
+  $(function() {
+    $("textarea").htmlarea({
+      toolbar: [
+              "html",
+              "|",
+              "bold", "italic", "underline", "strikethrough",
+              "|",
+              "justifyleft", "justifycenter", "justifyright",
+              "|",
+              "p"
+          ]
+    }); 
+  });
+</script>

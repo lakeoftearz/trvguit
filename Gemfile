@@ -32,9 +32,8 @@ gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'execjs'
 gem 'therubyracer', platforms: :ruby
-gem 'wysiwyg-rails'
 gem 'font-awesome-rails'
-
+gem 'jhtmlarea'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

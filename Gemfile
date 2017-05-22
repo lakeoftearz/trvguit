@@ -33,7 +33,7 @@ gem 'coffee-rails'
 gem 'execjs'
 gem 'therubyracer', platforms: :ruby
 gem 'font-awesome-rails'
-gem 'jhtmlarea'
+gem 'bootsy'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

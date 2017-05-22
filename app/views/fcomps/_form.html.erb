@@ -10,7 +10,8 @@
       <%= f.text_field :webpage %>
 
       <%= f.label :rules %>
-      <%= f.text_area :rules %>
+      <%= f.bootsy_area :rules, editor_options: { link: false,  lists: false, image: false } %>
+       
       
       <span class="picture">
     <%= f.file_field :logo, accept: 'image/jpeg,image/gif,image/png' %>
@@ -19,18 +20,5 @@
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
 
-<script type="text/javascript">    
-  $(function() {
-    $("textarea").htmlarea({
-      toolbar: [
-              "html",
-              "|",
-              "bold", "italic", "underline", "strikethrough",
-              "|",
-              "justifyleft", "justifycenter", "justifyright",
-              "|",
-              "p"
-          ]
-    }); 
-  });
+
 </script>

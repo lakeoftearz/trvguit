@@ -16,8 +16,7 @@
 //= require filterrific/filterrific-jquery
 //= require bootstrap
 //= require turbolinks
-//= require jHtmlArea-0.8.0
-//= require jHtmlArea.ColorPickerMenu-0.8.0
+//= require bootsy
 //= require_tree .
 jQuery( function($) {
     $('a').tooltip();

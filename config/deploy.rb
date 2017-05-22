@@ -39,7 +39,6 @@ set :bundle_env_variables, {
 # Files linked in from shared_path for every deploy
 append :linked_files,
   "config/database.yml",
-  "config/puma.rb",
   "config/secrets.yml"
 
 # Dirs linked in from shared_path for every deploy
